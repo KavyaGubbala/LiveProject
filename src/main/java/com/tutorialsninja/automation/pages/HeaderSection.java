@@ -14,5 +14,7 @@ public class HeaderSection {
 	public static WebElement Myaccountlink;
 	@FindBy(xpath="//ul[@class='dropdown-menu dropdown-menu-right']/li[1]")
 	public static WebElement RegistrationLink;
+	@FindBy(xpath="//ul[@class='dropdown-menu dropdown-menu-right']//li[2]")
+	public static WebElement LoginLink;
 
 }
