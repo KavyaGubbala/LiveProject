@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.tutorialsninja.automation.base.Base;
+import com.tutorialsninja.automation.framework.Elements;
 
 public class HeaderSection {
 	public HeaderSection() {
@@ -20,5 +21,20 @@ public class HeaderSection {
 	public static WebElement SearchBoxField;
 	@FindBy (css="button[class$='btn-lg']")
 	public static WebElement Searchbutton;
+	@FindBy(xpath="//span[text()='Shopping Cart']")
+	public static WebElement ViewShoppingCartOption;
+	
+	public static void navigateToLoginPage() {
+		Elements.click(HeaderSection.Myaccountlink);
+		Elements.click(HeaderSection.LoginLink);
+	}
+	public static void searchProduct() {
+		Elements.TypeText(HeaderSection.SearchBoxField, Base.reader.getProduct());
+	    Elements.click(HeaderSection.Searchbutton);
+
+	}
+	public static void navigateToShoppingcartPage() {
+		Elements.click(HeaderSection.ViewShoppingCartOption);
+	}
 
 }
